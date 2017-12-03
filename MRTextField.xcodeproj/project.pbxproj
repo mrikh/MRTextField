@@ -12,6 +12,7 @@
 		46D5EC751FD3188000E65A03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46D5EC731FD3188000E65A03 /* Main.storyboard */; };
 		46D5EC771FD3188000E65A03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46D5EC761FD3188000E65A03 /* Assets.xcassets */; };
 		46D5EC7A1FD3188000E65A03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46D5EC781FD3188000E65A03 /* LaunchScreen.storyboard */; };
+		46D5EC831FD318A000E65A03 /* MRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D5EC821FD318A000E65A03 /* MRTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		46D5EC761FD3188000E65A03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46D5EC791FD3188000E65A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46D5EC7B1FD3188000E65A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D5EC821FD318A000E65A03 /* MRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,21 @@
 		46D5EC6E1FD3188000E65A03 /* MRTextField */ = {
 			isa = PBXGroup;
 			children = (
+				46D5EC811FD3188A00E65A03 /* MRTextField */,
 				46D5EC6F1FD3188000E65A03 /* AppDelegate.swift */,
 				46D5EC711FD3188000E65A03 /* ViewController.swift */,
 				46D5EC731FD3188000E65A03 /* Main.storyboard */,
 				46D5EC761FD3188000E65A03 /* Assets.xcassets */,
 				46D5EC781FD3188000E65A03 /* LaunchScreen.storyboard */,
 				46D5EC7B1FD3188000E65A03 /* Info.plist */,
+			);
+			path = MRTextField;
+			sourceTree = "<group>";
+		};
+		46D5EC811FD3188A00E65A03 /* MRTextField */ = {
+			isa = PBXGroup;
+			children = (
+				46D5EC821FD318A000E65A03 /* MRTextField.swift */,
 			);
 			path = MRTextField;
 			sourceTree = "<group>";
@@ -138,6 +149,7 @@
 			files = (
 				46D5EC721FD3188000E65A03 /* ViewController.swift in Sources */,
 				46D5EC701FD3188000E65A03 /* AppDelegate.swift in Sources */,
+				46D5EC831FD318A000E65A03 /* MRTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

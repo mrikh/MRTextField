@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mrTextField: MRTextField!
+    @IBOutlet weak var showError: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,5 +24,15 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func showError(_ sender: UIButton) {
+        
+        mrTextField.showErrorMessage("LOL", withFont: nil)
+    }
+    
+    
+    @IBAction func hideError(_ sender: UIButton) {
+        
+        mrTextField.hideErrorMessage()
+    }
 }
 
