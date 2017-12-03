@@ -56,6 +56,33 @@ class MRTextField: UITextField {
     
     weak var customDelegate : MRTextFieldDelegate?
     
+    var regexString : String? = nil{
+        
+        didSet{
+         
+            addTarget(self, action: #selector(validateInput), for: .editingChanged)
+        }
+    }
+    
+    var errorString : String? = nil{
+        
+        didSet{
+            
+            errorLabel?.text = errorString
+        }
+    }
+    
+    var errorFont : UIFont? = nil{
+        
+        didSet{
+            
+            if let tempFont = errorFont{
+                
+                errorLabel?.font = tempFont
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -76,15 +103,15 @@ class MRTextField: UITextField {
     }
     
     //MARK: Error message in case of validation
-    func showErrorMessage(_ string : String, withFont font : UIFont?){
+    func showErrorMessage(){
         
         if let tempLayer = getLayerForIdentifier(LayerIdentifier.bottomBorder.rawValue){
             
             tempLayer.backgroundColor = UIColor.red.cgColor
         }
         
-        errorLabel?.text = string
-        if let tempFont = font{
+        errorLabel?.text = errorString
+        if let tempFont = errorFont{
             
             errorLabel?.font = tempFont
         }
@@ -149,6 +176,29 @@ class MRTextField: UITextField {
     }
     
     //MARK:- Private Functions
+    @objc func validateInput(){
+        
+        guard let regexStr = regexString, let userText = text else {return}
+        
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", regexStr)
+        
+        if passwordTest.evaluate(with: userText){
+            
+            if errorLabel?.alpha == CGFloat(1.0){
+                
+                hideErrorMessage()
+            }
+            
+        }else{
+            
+            //show that we dont show multiple times
+            if errorLabel?.alpha == CGFloat(0.0){
+            
+                showErrorMessage()
+            }
+        }
+    }
+    
     @objc func buttonAction(_ sender : UIButton){
         
         customDelegate?.userDidTapRightButton(sender)

@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        mrTextField.regexString = "^(?=.*[A-Za-z])(?=.*?[0-9])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}$"
+        mrTextField.errorString = "HAHAHAHAHAHHA"
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +29,7 @@ class ViewController: UIViewController {
 
     @IBAction func showError(_ sender: UIButton) {
         
-        mrTextField.showErrorMessage("LOL", withFont: nil)
+        mrTextField.showErrorMessage()
     }
     
     
