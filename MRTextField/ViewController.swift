@@ -37,5 +37,10 @@ class ViewController: UIViewController {
         
         mrTextField.hideErrorMessage()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        view.endEditing(true)
+    }
 }
 
